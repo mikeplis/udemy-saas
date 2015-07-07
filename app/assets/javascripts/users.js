@@ -1,7 +1,7 @@
 $(document).ready(function() {
   Stripe.setPublishableKey($("meta[name='stripe-key']").attr("content"));
   // Match for a form submission:
-  $("#form-submit-btn").click(function(event) {
+  $("#form-submit-button").click(function(event) {
     event.preventDefault();
     $("input[type=submit]").prop("disabled", true);
     var error = false;
@@ -12,7 +12,7 @@ $(document).ready(function() {
 
     if (!error) {
       // Get the Stripe token
-      Stripe.createToken({
+      Stripe.card.createToken({
         number: ccNum,
         cvc: cvcNum,
         exp_month: expMonth,
