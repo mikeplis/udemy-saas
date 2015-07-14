@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+
+  def index
+    
+  end
   
   def show
     # can tell it's :id and not :user_id from looking at output of `rake routes` -> "/users/:id"
